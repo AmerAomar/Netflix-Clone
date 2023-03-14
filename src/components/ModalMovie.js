@@ -12,10 +12,11 @@ function ModalMovie(props) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        title: movieData.name,
-        release_year:movieData.releasedate,
-        director: comment,
-      }),
+  title: movieData.name,
+  release_date: movieData.releasedate, // include release_date
+  director: comment,        
+}),
+
     })
       .then((response) => response.json())
       .then((data) => {
