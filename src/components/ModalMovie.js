@@ -6,15 +6,16 @@ function ModalMovie(props) {
   const [comment, setComment] = useState("");
 
   const handleAddToFavorite = () => {
-    fetch("http://localhost:3000/moviesDB", {
+    fetch(`${process.env.REACT_APP_serverUrl}/moviesDB`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
   title: movieData.name,
-  release_date: movieData.releasedate, // include release_date
-  director: comment,        
+  // release_date: movieData.overview, // include release_date
+  director: comment, 
+  genre: movieData.img,// here i added the image to the database in the genre because im dumb       
 }),
 
     })
@@ -39,6 +40,7 @@ function ModalMovie(props) {
       </Modal.Header>
       <Modal.Body>
         <img src={movieData.img} alt={movieData.name} width="100%" />
+        <h5>{movieData.overview}</h5>
         <p>Add a comment:</p>
         <textarea rows="1" value={comment} onChange={handleCommentChange} />
       </Modal.Body>
