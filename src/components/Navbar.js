@@ -8,9 +8,10 @@ function Header() {
     <>
       <Navbar bg='dark' variant="dark">
         <Container>
-          <Navbar.Brand href="#home" style={{ color: "#ffd700" }}>All Movies</Navbar.Brand>
+          <Navbar.Brand href="/" style={{ color: "#ffd700" }}>All Movies</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home" style={{ color: "#ffd700" }}>Home</Nav.Link>
+            <Nav.Link href="/" style={{ color: "#ffd700" }}>Home</Nav.Link>
+            <Nav.Link href="/favorite" style={{ color: "#ffd700" }}>Favorite list</Nav.Link>
             
           </Nav>
         </Container>

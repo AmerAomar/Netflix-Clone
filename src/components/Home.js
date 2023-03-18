@@ -8,7 +8,7 @@ function Home(){
     const [trendingMovies, setTrendingMovies] = useState([]);
 
     const sendReq = async () => {
-        const trendingUrl = `http://localhost:3000/trending`;
+        const trendingUrl = `${process.env.REACT_APP_serverUrl}/trending`;
         const response = await fetch(trendingUrl);
         const data = await response.json();
         console.log(data);
